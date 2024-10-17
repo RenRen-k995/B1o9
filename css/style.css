@@ -1,0 +1,33 @@
+.main-blog-card{
+    width: 90%;
+}
+.category-aside{
+    width: 100%;
+}
+.main-blog{
+    width: 70%;
+}
+.aside-main{
+    width: 30%;
+}
+.w-450 {
+	width: 450px;
+}
+.vh-100 {
+	min-height: 100vh;
+}
+.link-secondary{
+    margin-left: 5px;
+    margin-right: 10px;
+}
+@media only screen and (max-width: 768px) {
+    .aside-main{
+        display: none;
+    }
+    .main-blog{
+        width: 100%;
+    }
+    .main-blog-card{
+        width: 100%;
+    }
+}
