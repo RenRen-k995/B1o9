@@ -16,10 +16,12 @@
 .vh-100 {
 	min-height: 100vh;
 }
-.link-secondary{
-    margin-left: 5px;
-    margin-right: 10px;
+#dropdownMenuLink{
+    background-color: transparent !important; /* Remove background highlight */
+    color: #6c757d;
+    box-shadow: none; /* Remove any outline or shadow */
 }
+
 @media only screen and (max-width: 768px) {
     .aside-main{
         display: none;

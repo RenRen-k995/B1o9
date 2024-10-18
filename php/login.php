@@ -30,14 +30,14 @@ if(isset($_POST['uname']) &&
 
           $username =  $user['username'];
           $password =  $user['password'];
-          $fname =  $user['fname'];
+          $email =  $user['email'];
           $id =  $user['id'];
           if($username === $uname){
              if(password_verify($pass, $password)){
                  $_SESSION['id'] = $id;
-                 $_SESSION['fname'] = $fname;
+                 $_SESSION['email'] = $email;
 
-                 header("Location: ../home.php");
+                 header("Location: ../index.php");
                  exit;
              }else {
                $em = "Incorect User name or password";

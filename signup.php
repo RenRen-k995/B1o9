@@ -27,11 +27,11 @@
 			</div>
 		    <?php } ?>
 		  <div class="mb-3">
-		    <label class="form-label">Full Name</label>
+		    <label class="form-label">Email</label>
 		    <input type="text" 
 		           class="form-control"
-		           name="fname"
-		           value="<?php echo (isset($_GET['fname']))?$_GET['fname']:"" ?>">
+		           name="email"
+		           value="<?php echo (isset($_GET['email']))?$_GET['email']:"" ?>">
 		  </div>
 
 		  <div class="mb-3">
@@ -50,7 +50,7 @@
 		  </div>
 		  
 		  <button type="submit" class="btn btn-primary">Sign Up</button>
-		  <a href="login.php" class="link-secondary">Login</a>
+		  <a href="login.php" class="link-secondary ms-2">Login</a>
 		</form>
     </div>
 </body>

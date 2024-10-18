@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Login</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="d-flex justify-content-center align-items-center vh-100">
@@ -36,10 +36,22 @@
 		           name="pass">
 		  </div>
 		  
-		  <button type="submit" class="btn btn-primary">Login</button>
-		  <a href="index.php" class="link-secondary">Home</a>
-		  <a href="signup.php" class="link-secondary">Sign Up</a>
-		</form>
+		<!-- Login button -->
+		<button type="submit" class="btn btn-primary">Login</button>
+
+		<!-- Home link -->
+		<a href="index.php" class="link-secondary ms-3">Home</a>
+
+		<!-- Sign Up dropdown toggle and link -->
+		<a class="link-secondary dropdown-toggle ms-3" href="signup.php" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+		Sign Up
+		</a>
+
+		<!-- Dropdown menu -->
+		<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="min-width: 100px; border-radius: 0.5rem; overflow: hidden;">
+			<li><a class="dropdown-item" href="admin-login.php">Admin Login</a></li>
+		</ul>
     </div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
