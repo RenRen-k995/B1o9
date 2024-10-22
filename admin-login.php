@@ -11,16 +11,16 @@
     <div class="d-flex justify-content-center align-items-center vh-100">
     	
     	<form class="shadow w-450 p-3" action="admin/admin-login.php" method="post">
-            <?php
+          <!-- <?php
             $pass = "112233";
             $pass = password_hash($pass, PASSWORD_DEFAULT);
             echo $pass;
-            ?>
+            ?> -->
     		<h4 class="display-4  fs-1">ADMIN LOGIN</h4><br>
-            <p>Only for Administrate</p>
+            <p>Only for Administrator</p>
     		<?php if(isset($_GET['error'])){ ?>
     		<div class="alert alert-danger" role="alert">
-			  <?php echo $_GET['error']; ?>
+			  <?php echo htmlspecialchars($_GET['error']); ?>
 			</div>
 		    <?php } ?>
 
@@ -29,7 +29,7 @@
 		    <input type="text" 
 		           class="form-control"
 		           name="uname"
-		           value="<?php echo (isset($_GET['uname']))?$_GET['uname']:"" ?>">
+		           value="<?php echo (isset($_GET['uname']))? htmlspecialchars($_GET['uname']):"" ?>">
 		  </div>
 
 		  <div class="mb-3">

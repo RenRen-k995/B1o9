@@ -1,35 +1,135 @@
-.main-blog-card{
+/* Đặt chiều rộng cho thẻ bài blog là 90% chiều rộng của phần tử chứa */
+.main-blog-card {
     width: 90%;
 }
-.category-aside{
+
+/* Đặt chiều rộng cho danh sách danh mục là 100% */
+.category-aside {
     width: 100%;
 }
-.main-blog{
+
+/* Đặt chiều rộng cho phần nội dung chính là 70% */
+.main-blog {
     width: 70%;
 }
-.aside-main{
+
+/* Đặt chiều rộng cho phần bên cạnh là 30% */
+.aside-main {
     width: 30%;
 }
-.w-450 {
-	width: 450px;
-}
-.vh-100 {
-	min-height: 100vh;
-}
-#dropdownMenuLink{
-    background-color: transparent !important; /* Remove background highlight */
-    color: #6c757d;
-    box-shadow: none; /* Remove any outline or shadow */
+
+/* Đặt chiều rộng cố định là 450px cho các phần tử gán lớp này */
+.w-450{
+    width: 450px;
 }
 
+/* Đảm bảo chiều cao tối thiểu là 100% chiều cao của cửa sổ */
+.vh-100 {
+    min-height: 100vh;
+}
+
+/* Thiết lập kiểu cho phần "section-1" trong phần admin với nền là hình ảnh và căn giữa */
+.section-1{
+	width: 100%;
+	background: url("../img/lamancha.jpg") center /cover; 
+	/* Chỗ này nếu để như vậy thì có background nha, nếu để vào cmt thì mất */
+    padding: 20px;
+}
+
+/* Thiết lập kiểu cho bảng trong phần admin */
+.main-table .All-user{
+    color: #FFEF23; /* Màu chữ nổi bật */
+    width: 100%;    /* Chiều rộng 100% */
+    height: 10%;    /* Chiều cao 10% */
+    background-color: #fff4; /* Nền nhạt */
+    padding: .8rem 1rem; /* Khoảng cách trong */
+}
+
+/* Phần thân của bảng có chiều rộng 90%, chiều cao tối đa là 88%, bo góc và có thanh cuộn */
+.table-body{
+    width: 90%;
+    max-height: calc(88% - 1rem);
+    margin: .9rem auto;
+    background-color: #fffb;
+    border-radius: .6rem;
+    overflow: auto; /* Cho phép cuộn */
+}
+
+/* Thiết lập thanh cuộn ẩn khi không tương tác */
+.table-body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+/* Thiết lập thanh cuộn khi di chuột vào */
+.table-body::-webkit-scrollbar-thumb{
+    border-radius: .6rem;
+    background-color: #0004;
+    visibility: hidden; /* Ẩn thanh cuộn */
+}
+
+/* Hiển thị thanh cuộn khi người dùng di chuột vào bảng */
+.table-body:hover::-webkit-scrollbar-thumb{
+    visibility: visible; /* Hiện thanh cuộn */
+}
+
+/* Thiết lập cho bảng chính với chiều rộng 80vw và bo góc, làm mờ nền */
+.main-table{
+    width: 80vw;
+    height: 86vh;
+    max-width: 700px;
+    border-radius: .8rem;
+    backdrop-filter: blur(7px); /* Làm mờ nền */
+    background-color: rgba(255, 255, 245, 0.292) !important;
+    overflow: hidden;
+}
+
+/* Đảm bảo tính trong suốt cho phần thân và ô dữ liệu của bảng */
+.t1 tbody,
+.t1 td {
+    text-align: left;
+    vertical-align: middle;
+    border: none;
+    background-color: transparent !important; /* Nền trong suốt */
+}
+
+/* Đặt khoảng cách cho các ô trong bảng */
+th, td{
+    padding-left: 1rem !important;
+}
+
+/* Cố định tiêu đề của bảng khi cuộn và đặt nền */
+thead th{
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    background-color: #e2babaf7 !important; /* Nền màu tiêu đề */
+}
+
+/* Đặt kiểu cho menu dropdown, loại bỏ nền và bóng */
+#dropdownMenuLink {
+    background-color: transparent !important; /* Loại bỏ nền */
+    color: #6c757d; /* Đặt màu chữ */
+    box-shadow: none; /* Loại bỏ bóng hoặc đường viền */
+}
+
+/* Thiết lập kiểu cho các màn hình nhỏ hơn 768px */
 @media only screen and (max-width: 768px) {
-    .aside-main{
+    /* Ẩn phần bên cạnh trên các màn hình nhỏ */
+    .aside-main {
         display: none;
     }
-    .main-blog{
+    
+    /* Đặt chiều rộng của phần nội dung chính là 100% */
+    .main-blog {
         width: 100%;
     }
-    .main-blog-card{
+    
+    /* Đặt chiều rộng cho thẻ bài blog là 100% */
+    .main-blog-card {
         width: 100%;
     }
 }
+
