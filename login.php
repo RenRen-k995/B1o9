@@ -17,7 +17,7 @@
     		<h4 class="display-4  fs-1">LOGIN</h4><br>
     		<?php if(isset($_GET['error'])){ ?>
     		<div class="alert alert-danger" role="alert">
-			  <?php echo $_GET['error']; ?>
+			  <?php echo htmlspecialchars($_GET['error']); ?>
 			</div>
 		    <?php } ?>
 
@@ -26,7 +26,7 @@
 		    <input type="text" 
 		           class="form-control"
 		           name="uname"
-		           value="<?php echo (isset($_GET['uname']))?$_GET['uname']:"" ?>">
+		           value="<?php echo (isset($_GET['uname']))? htmlspecialchars($_GET['uname']):"" ?>">
 		  </div>
 
 		  <div class="mb-3">
@@ -35,22 +35,25 @@
 		           class="form-control"
 		           name="pass">
 		  </div>
+		   
+		  <!-- Login button -->
+		  <button type="submit" class="btn btn-primary">Login</button>
+
+		  <!-- Home link -->
+		  <a href="index.php" class="link-secondary ms-3">Home</a>
+
+		  <!-- Sign Up dropdown toggle and link -->
+		  <div class="dropdown d-inline">
+		    <!-- Dropdown menu -->
+			  	<a class="link-secondary ms-3" href="signup.php">Sign up</a>
+				<a class="dropdown-toggle" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+				</a>
+				<ul class="dropdown-menu dropdown-menu-end" style="min-width: 100px; border-radius: 0.5rem; overflow: hidden;">
+					<li><a class="dropdown-item" href="admin-login.php">Admin Login</a></li>
+				</ul>
+		  </div>
 		  
-		<!-- Login button -->
-		<button type="submit" class="btn btn-primary">Login</button>
-
-		<!-- Home link -->
-		<a href="index.php" class="link-secondary ms-3">Home</a>
-
-		<!-- Sign Up dropdown toggle and link -->
-		<a class="link-secondary dropdown-toggle ms-3" href="signup.php" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-		Sign Up
-		</a>
-
-		<!-- Dropdown menu -->
-		<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" style="min-width: 100px; border-radius: 0.5rem; overflow: hidden;">
-			<li><a class="dropdown-item" href="admin-login.php">Admin Login</a></li>
-		</ul>
+    	</form>
     </div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

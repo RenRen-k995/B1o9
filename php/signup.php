@@ -40,7 +40,7 @@ if(isset($_POST['email']) && isset($_POST['uname']) && isset($_POST['pass'])){
         $stmt->execute([$email, $uname, $pass]); // Thực thi câu lệnh SQL với thông tin người dùng
 
         // Chuyển hướng đến trang chính với thông báo thành công
-        header("Location: ../index.php?success=Tài khoản của bạn đã được tạo thành công");
+        header("Location: ../signup.php?success=Tài khoản của bạn đã được tạo thành công");
         exit;
     }
 } else {
