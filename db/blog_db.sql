@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 22, 2024 at 06:25 AM
+-- Generation Time: Oct 25, 2024 at 02:49 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -41,6 +41,33 @@ CREATE TABLE `admin` (
 INSERT INTO `admin` (`admin_id`, `email`, `username`, `password`) VALUES
 (1, 'khoaphd.23it@vku.udn.vn', 'Khoa Pham', '$2y$10$t3J.vGA7pUzpxtw8IOlNmussLitCKxQ0oJ9u6vUleoX.VmX/itkye'),
 (2, 'hoanglt.23it@vku.udn.vn', 'Hoang Le', '$2y$10$DdqXTeiVtJJ.LJyCCpMeD.zAXiSY6XWKQG14g37zZInWm3T8AWbtO');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `post`
+--
+
+CREATE TABLE `post` (
+  `post_id` int(11) NOT NULL,
+  `post_title` varchar(127) NOT NULL,
+  `post_text` text NOT NULL,
+  `category` int(11) NOT NULL,
+  `cover_url` varchar(255) NOT NULL DEFAULT 'default.jpg',
+  `created_at` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `post`
+--
+
+INSERT INTO `post` (`post_id`, `post_title`, `post_text`, `category`, `cover_url`, `created_at`) VALUES
+(1, 'Blog title', 'Blog text, just simply like this, don\'t hold your breath, hahaha, baka yarou.', 1, '', '2024-10-22 20:08:50'),
+(2, 'BlOg TiTlE', 'it\'s strange, doesn\'t it? haha', 1, '', '2024-10-22 20:14:18'),
+(6, 'cv', '<div>bf</div>', 0, 'COVER-6719d24c856473.20398741.png', '0000-00-00 00:00:00'),
+(7, 'vdv', '<div>csv</div>', 0, 'COVER-6719d2617c7064.18611014.png', '0000-00-00 00:00:00'),
+(8, 'gaga', 'gaga', 0, 'COVER-671a62b64adaf1.61224623.jpg', '0000-00-00 00:00:00'),
+(9, 'Bruh', 'HAHA', 0, 'COVER-671a65459d14a6.93697197.png', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -83,6 +110,12 @@ ALTER TABLE `admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
+-- Indexes for table `post`
+--
+ALTER TABLE `post`
+  ADD PRIMARY KEY (`post_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -98,6 +131,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `post`
+--
+ALTER TABLE `post`
+  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `users`
