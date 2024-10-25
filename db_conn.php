@@ -7,8 +7,7 @@ $db_name = "blog_db"; // Tên cơ sở dữ liệu
 
 try {
     // Tạo một đối tượng PDO mới để kết nối với cơ sở dữ liệu
-    $conn = new PDO("mysql:host=$sName;dbname=$db_name", 
-                    $uName, $pass);
+    $conn = new PDO("mysql:host=$sName;dbname=$db_name", $uName, $pass);
     // Thiết lập chế độ báo lỗi cho PDO
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {

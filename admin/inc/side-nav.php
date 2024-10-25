@@ -10,16 +10,18 @@
 				<i id="navbtn" class="fa fa-bars" aria-hidden="true"></i>
 			</label>
 		</h2>
-		<i class="fa fa-user" aria-hidden="true"></i>
+		<div class="d-flex align-items-center">
+			<i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;
+			<span><b> @<?php echo $_SESSION['username']; ?></b></span>
+		</div>
 	</header>
 	<div class="body">
 		<nav class="side-bar">
 			<div class="user-p">
-				<a href="index.php"><img src="../img/beechi_bolley_burr.jpg"></a>
-				<h4><b><?php echo $_SESSION['username']; ?></b></h4>
+				<a href="index.php"><img class="bg" src="../img/beechi_bolley_burr.jpg"></a>
 			</div>
-			<ul> <!-- Bắt đầu danh sách điều hướng trong sidebar -->
-				<li>
+			<ul id="navList"> <!-- Bắt đầu danh sách điều hướng trong sidebar -->
+				<li >
 					<a href="Users.php">
 						<i class="fa fa-users" aria-hidden="true"></i>
                         <!-- Icon 'fa-users' đại diện cho mục quản lý người dùng -->
@@ -72,7 +74,6 @@
 				</li>
 			</ul>
 		</nav>
-		<section class="section-1">
 <?php
     } else {
         echo "error"; // Nếu biến $key không tồn tại hoặc không đúng giá trị, sẽ hiển thị 'error'.

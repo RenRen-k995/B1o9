@@ -31,13 +31,21 @@
 /* Thiết lập kiểu cho phần "section-1" trong phần admin với nền là hình ảnh và căn giữa */
 .section-1{
 	width: 100%;
-	background: url("../img/lamancha.jpg") center /cover; 
+    background: url("../img/lamancha.jpg") center /cover; 
 	/* Chỗ này nếu để như vậy thì có background nha, nếu để vào cmt thì mất */
-    padding: 20px;
+    padding: 23px;
+}
+.section-2{
+	width: 100%;
+	/* Chỗ này nếu để như vậy thì có background nha, nếu để vào cmt thì mất */
+    background: url("../img/lamancha.jpg") center /cover; 
+    display: flex;
+    justify-content: center;
+    padding: 25px;
 }
 
 /* Thiết lập kiểu cho bảng trong phần admin */
-.main-table .All-user{
+.All-user{
     color: #FFEF23; /* Màu chữ nổi bật */
     width: 100%;    /* Chiều rộng 100% */
     min-height: 10%;    /* Chiều cao 10% */
@@ -48,7 +56,7 @@
 /* Phần thân của bảng có chiều rộng 90%, chiều cao tối đa là 88%, bo góc và có thanh cuộn */
 .table-body{
     width: 90%;
-    max-height: calc(86% - 1rem);
+    max-height: calc(87% - 1rem);
     margin: .9rem auto;
     background-color: #fffb;
     border-radius: .8rem;
@@ -78,12 +86,30 @@
     width: 80vw;
     height: 81vh;
     max-width: 600px;
-    min-height: 580px;
+    min-height: 582px;
     border-radius: .8rem;
     backdrop-filter: blur(7px); /* Làm mờ nền */
     background-color: rgba(255, 255, 245, 0.292) !important;
     overflow: hidden;
 }
+.main-post-table{
+    width: 80%;
+    border-radius: .8rem;
+    backdrop-filter: blur(7px); /* Làm mờ nền */
+    background-color: rgba(255, 255, 245, 0.292) !important;
+    overflow: hidden;
+}
+.main-single-post {
+    border-radius: .8rem;
+    backdrop-filter: blur(7px);
+    background-color: rgba(255, 255, 245, 0.292) !important;
+    display: flex;
+    justify-content: center; /* Horizontally centers the card */
+    align-items: center; /* Centers vertically */
+    padding-top: 3%;
+    width: 90%;
+    max-width: 700px;
+ }
 
 /* Đảm bảo tính trong suốt cho phần thân và ô dữ liệu của bảng */
 .t1 tbody,
@@ -108,7 +134,10 @@ thead th{
     padding-bottom: 1rem !important;
     background-color: #e2babaf7 !important; /* Nền màu tiêu đề */
 }
-
+.form-label.text-size{
+    font-size: 20px;
+    color:#FFEF23;
+}
 /* Đặt kiểu cho menu dropdown, loại bỏ nền và bóng */
 #dropdownMenuLink {
     background-color: transparent !important; /* Loại bỏ nền */

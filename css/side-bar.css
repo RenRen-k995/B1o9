@@ -68,6 +68,10 @@
 .side-bar ul li:hover {
 	background: goldenrod;
 }
+/* phần này m xem có sửa thì sửa cho phù hợp nha */
+.side-bar ul .active { 
+	background: goldenrod;
+}
 .side-bar ul li a {
 	text-decoration: none;
 	color: #eee;
