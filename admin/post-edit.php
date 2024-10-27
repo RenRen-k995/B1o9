@@ -1,12 +1,12 @@
 <?php 
 session_start();
 
-if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
+if (isset($_SESSION['admin_id']) && isset($_SESSION['username']) && isset($_GET['post_id'])) {
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard - Create Post</title>
+	<title>Dashboard - Edit Post</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../css/side-bar.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -21,13 +21,15 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
     <?php 
     $key = "hhdsfs1263z";
     include "inc/side-nav.php" ;
-    include_once("data/Category.php");
+    include_once("data/Post.php");
     include_once("../db_conn.php");
-    $categories = getAll($conn);
+    $post_id = $_GET['post_id'];
+    $post = getById($conn, $post_id);
+    $categories = getAllCategories($conn);
     ?>
     <div class="main-post-table">
     <div> 
-        <h3 class=" All-user">Create New Post 
+        <h3 class=" All-user">Edit Post 
             <a href="post.php" class="btn btn-secondary">Posts</a>
         </h3>
         <?php if (isset($_GET['error'])) { ?>
@@ -43,22 +45,24 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
         <?php } ?>
 
         <form class="shadow p-3" 
-    	      action="req/post-create.php" 
+    	      action="req/post-edit.php" 
     	      method="post"
               enctype="multipart/form-data">
 
 		    <div class="mb-3">
 		    <label class="form-label text-size">Title</label> 
-		    <input type="text" 
-		           class="form-control"
-		           name="title">
+		    <input type="text" class="form-control" name="title" value="<?=$post['post_title']?>">
+            <input type="text" class="form-control" name="post_id" value="<?=$post['post_id']?>" hidden>
+            <input type="text" class="form-control" name="cover_url" value="<?=$post['cover_url']?>" hidden>
 		    </div>
 
             <div class="mb-3">
 		    <label class="form-label text-size">Category</label> 
             <select name="category" class="form-control">
                 <?php foreach ($categories as $category) { ?>
-                    <option value="<?=$category['id']?>"><?=$category['category']?></option>
+                    <option value="<?=$category['id']?>"
+                    <?php  echo ($category['id'] == $post['category']) ? "selected": "" ?>>
+                    <?=$category['category']?></option>
                 <?php }?>
             </select>
 		    </div>
@@ -68,15 +72,17 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 		    <input type="file" 
 		           class="form-control"
 		           name="cover">
+            <img src="../upload/blog/<?=$post['cover_url']?>" width = 200>
+            <!-- chỗ width là kích thước ảnh phần Edit Post nhá -->
 		    </div>
 
             <div class="mb-3">
 		    <label class="form-label text-size">Text</label> 
-		    <textarea class="form-control text" name="text"></textarea>
+		    <textarea class="form-control text" name="text"><?=$post['post_text']?></textarea>
 		    </div>
 		   
             <!-- Create button -->
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" class="btn btn-primary">Save Change</button>
     	</form>
     </div>
 	</section>

@@ -14,19 +14,19 @@ if(isset($_POST['email']) && isset($_POST['uname']) && isset($_POST['pass'])){
     
     // Kiểm tra nếu email để trống
     if (empty($email)) {
-        $em = "Email là bắt buộc"; // Thông báo lỗi
+        $em = "Email is required!"; // Thông báo lỗi
         header("Location: ../index.php?error=$em&$data"); // Chuyển hướng đến trang đăng ký với thông báo lỗi
         exit;
     } 
     // Kiểm tra nếu tên người dùng để trống
     else if(empty($uname)){
-        $em = "Tên người dùng là bắt buộc"; // Thông báo lỗi
+        $em = "Username is required!"; // Thông báo lỗi
         header("Location: ../index.php?error=$em&$data"); // Chuyển hướng đến trang đăng ký với thông báo lỗi
         exit;
     } 
     // Kiểm tra nếu mật khẩu để trống
     else if(empty($pass)){
-        $em = "Mật khẩu là bắt buộc"; // Thông báo lỗi
+        $em = "Password is required!"; // Thông báo lỗi
         header("Location: ../signup.php?error=$em&$data"); // Chuyển hướng đến trang đăng ký với thông báo lỗi
         exit;
     } 
@@ -40,7 +40,7 @@ if(isset($_POST['email']) && isset($_POST['uname']) && isset($_POST['pass'])){
         $stmt->execute([$email, $uname, $pass]); // Thực thi câu lệnh SQL với thông tin người dùng
 
         // Chuyển hướng đến trang chính với thông báo thành công
-        header("Location: ../signup.php?success=Tài khoản của bạn đã được tạo thành công");
+        header("Location: ../signup.php?success=Your account has successfully been created!");
         exit;
     }
 } else {

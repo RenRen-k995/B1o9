@@ -13,13 +13,13 @@ if(isset($_POST['uname']) && isset($_POST['pass'])){
     
     // Kiểm tra nếu tên người dùng để trống
     if(empty($uname)){
-        $em = "Tên người dùng là bắt buộc"; // Thông báo lỗi
+        $em = "Username is required!"; // Thông báo lỗi
         header("Location: ../login.php?error=$em&$data"); // Chuyển hướng đến trang đăng nhập với thông báo lỗi
         exit;
     } 
     // Kiểm tra nếu mật khẩu để trống
     else if(empty($pass)){
-        $em = "Mật khẩu là bắt buộc"; // Thông báo lỗi
+        $em = "Password is required!"; // Thông báo lỗi
         header("Location: ../login.php?error=$em&$data"); // Chuyển hướng đến trang đăng nhập với thông báo lỗi
         exit;
     } else {
@@ -49,26 +49,26 @@ if(isset($_POST['uname']) && isset($_POST['pass'])){
                     exit;
                 } else {
                     // Nếu mật khẩu không đúng
-                    $em = "Tên người dùng hoặc mật khẩu không đúng"; // Thông báo lỗi
+                    $em = "Username or password is incorrect!"; // Thông báo lỗi
                     header("Location: ../login.php?error=$em&$data"); // Chuyển hướng đến trang đăng nhập với thông báo lỗi
                     exit;
                 }
             } else {
                 // Nếu tên người dùng không khớp
-                $em = "Tên người dùng hoặc mật khẩu không đúng"; // Thông báo lỗi
+                $em = "Username or password is incorrect!"; // Thông báo lỗi
                 header("Location: ../login.php?error=$em&$data"); // Chuyển hướng đến trang đăng nhập với thông báo lỗi
                 exit;
             }
         } else {
             // Nếu không tìm thấy người dùng
-            $em = "Tên người dùng hoặc mật khẩu không đúng"; // Thông báo lỗi
+            $em = "Username or password is incorrect!"; // Thông báo lỗi
             header("Location: ../login.php?error=$em&$data"); // Chuyển hướng đến trang đăng nhập với thông báo lỗi
             exit;
         }
     }
 } else {
     // Nếu không có dữ liệu POST
-    header("Location: ../login.php?error=lỗi"); // Chuyển hướng đến trang đăng nhập với thông báo lỗi
+    header("Location: ../login.php?error=error"); // Chuyển hướng đến trang đăng nhập với thông báo lỗi
     exit;
 }
 ?>

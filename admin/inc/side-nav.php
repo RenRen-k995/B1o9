@@ -18,7 +18,7 @@
 	<div class="body">
 		<nav class="side-bar">
 			<div class="user-p">
-				<a href="index.php"><img class="bg" src="../img/beechi_bolley_burr.jpg"></a>
+				<a href="index.php"><img src="../img/avatar_Past.jpg"></a>
 			</div>
 			<ul id="navList"> <!-- Bắt đầu danh sách điều hướng trong sidebar -->
 				<li >
@@ -42,16 +42,8 @@
 						<span>Category</span> <!-- Tên mục 'Category' -->
 					</a>
 				</li>
-                <!-- Mục 'Pages' đã bị comment và tạm thời không sử dụng -->
 				<li>
-					<a href="#">
-						<i class="fa fa-envelope-o" aria-hidden="true"></i>
-                        <!-- Icon 'fa-envelope-o' đại diện cho mục tin nhắn -->
-						<span>Message</span> <!-- Tên mục 'Message' -->
-					</a>
-				</li>
-				<li>
-					<a href="#">
+					<a href="Comment.php">
 						<i class="fa fa-comment-o" aria-hidden="true"></i>
                         <!-- Icon 'fa-comment-o' đại diện cho mục bình luận -->
 						<span>Comment</span> <!-- Tên mục 'Comment' -->
@@ -74,6 +66,7 @@
 				</li>
 			</ul>
 		</nav>
+		<section class="common-section">
 <?php
     } else {
         echo "error"; // Nếu biến $key không tồn tại hoặc không đúng giá trị, sẽ hiển thị 'error'.

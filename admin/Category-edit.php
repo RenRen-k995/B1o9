@@ -1,34 +1,38 @@
 <?php 
 session_start();
 
-if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
-?>
+if (isset($_SESSION['admin_id']) && isset($_SESSION['username']) && $_GET['id']) {
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard - Create Post</title>
+	<title>Dashboard - Category Edit</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../css/side-bar.css">
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="../css/richtext.min.css">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/jquery.richtext.min.js"></script>
 </head>
-<body class="page-2">
+<body class="page-1">
     <?php 
     $key = "hhdsfs1263z";
+    $id = $_GET['id'];
     include "inc/side-nav.php" ;
     include_once("data/Category.php");
     include_once("../db_conn.php");
-    $categories = getAll($conn);
+    $category_other = getById($conn, $id);
+
+    if (isset($_GET['category'])) {
+        $category = $_GET['category'];
+    } else {
+        $category = $category_other['category'];
+        $category_id = $category_other['id'];
+    }
     ?>
-    <div class="main-post-table">
-    <div> 
-        <h3 class=" All-user">Create New Post 
-            <a href="post.php" class="btn btn-secondary">Posts</a>
+    
+    <div class="main-table">
+        <h3 class="All-user">Edit 
+            <a href="Category.php" class="btn btn-secondary">Category</a>
         </h3>
         <?php if (isset($_GET['error'])) { ?>
         <div class="alert alert-warning">
@@ -43,53 +47,26 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
         <?php } ?>
 
         <form class="shadow p-3" 
-    	      action="req/post-create.php" 
-    	      method="post"
-              enctype="multipart/form-data">
+    	      action="req/Category-edit.php" 
+    	      method="post">
 
 		    <div class="mb-3">
-		    <label class="form-label text-size">Title</label> 
-		    <input type="text" 
-		           class="form-control"
-		           name="title">
-		    </div>
-
-            <div class="mb-3">
 		    <label class="form-label text-size">Category</label> 
-            <select name="category" class="form-control">
-                <?php foreach ($categories as $category) { ?>
-                    <option value="<?=$category['id']?>"><?=$category['category']?></option>
-                <?php }?>
-            </select>
-		    </div>
-
-            <div class="mb-3">
-		    <label class="form-label text-size">Cover Image</label> 
-		    <input type="file" 
-		           class="form-control"
-		           name="cover">
-		    </div>
-
-            <div class="mb-3">
-		    <label class="form-label text-size">Text</label> 
-		    <textarea class="form-control text" name="text"></textarea>
+		    <input type="text" class="form-control" name="category" value="<?=$category?>">
+            <input type="text" class="form-control" name="id" value="<?=$category_id?>" hidden>
 		    </div>
 		   
             <!-- Create button -->
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" class="btn btn-primary">Change</button>
     	</form>
+        
     </div>
 	</section>
 	</div>
     
     <script>
         var navList = document.getElementById('navList').children;
-        navList.item(1).classList.add("active");
-
-        $(document).ready(function() {
-            $('.text').richText();
-        });
-
+        navList.item(2).classList.add("active");
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
