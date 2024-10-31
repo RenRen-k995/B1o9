@@ -28,6 +28,7 @@
 		    <?php } ?>
 		  <div class="mb-3">
 		    <label class="form-label">Email</label>
+			<!-- sau thêm cái điều kiện gmail vào -->
 		    <input type="text" 
 		           class="form-control"
 		           name="email"

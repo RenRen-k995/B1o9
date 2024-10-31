@@ -44,7 +44,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username']) && isset($_GET[
         </div>
         <?php } ?>
 
-        <form class="shadow p-3" 
+        <form class="shadow p-3 form" 
     	      action="req/post-edit.php" 
     	      method="post"
               enctype="multipart/form-data">
