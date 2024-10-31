@@ -13,7 +13,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
-<body class="page-1">
+<body class="page-2">
     <?php 
     $key = "hhdsfs1263z";
     include "inc/side-nav.php" ;
@@ -21,7 +21,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
     include_once("../db_conn.php");
     $users = getAll($conn);
     ?>
-    <div class="main-table">
+    <div class="main-table wh-option-1">
         <h3 class="All-user">All Users <a href="../signup.php" class="btn btn-success">Add New</a></h3>
         <?php if (isset($_GET['error'])) { ?>
         <div class="alert alert-warning">
@@ -71,7 +71,6 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
     <script>
         var navList = document.getElementById('navList').children;
         navList.item(0).classList.add("active");
-        // console.log(navList.item(1));
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 

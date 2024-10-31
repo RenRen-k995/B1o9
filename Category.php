@@ -8,13 +8,16 @@
     <link rel="stylesheet" href="css/style.css"> <!-- Liên kết đến file CSS tùy chỉnh -->
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary"> <!-- Navbar chính -->
+    <?php
+        include 'inc/NavBar.php'; 
+    ?>
+    <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary"> 
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Category Page</a> <!-- Tiêu đề của navbar -->
+            <a class="navbar-brand" href="#">Category Page</a> 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!-- Các mục trong navbar -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.php">Home</a>
@@ -28,7 +31,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="blog.php">Blog</a>
                     </li>
-                    <li class="nav-item dropdown"> <!-- Dropdown cho danh mục -->
+                    <li class="nav-item dropdown"> 
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Category
                         </a>
@@ -38,16 +41,16 @@
                         </ul>
                     </li>
                     <li>
-                        <a class="nav-link" href="login.php">Login | Signup</a> <!-- Liên kết đến trang đăng nhập và đăng ký -->
+                        <a class="nav-link" href="login.php">Login | Signup</a> 
                     </li>
                 </ul>
-                <form class="d-flex" role="search"> <!-- Form tìm kiếm -->
+                <form class="d-flex" role="search"> 
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
     <div class="container mt-5"> <!-- Nội dung chính của trang -->
         <h1 class="display-4 mb-4 fs-3">Category 1</h1> <!-- Tiêu đề danh mục -->

@@ -10,15 +10,17 @@
 				<i id="navbtn" class="fa fa-bars" aria-hidden="true"></i>
 			</label>
 		</h2>
-		<div class="d-flex align-items-center">
-			<i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;
-			<span><b> @<?php echo $_SESSION['username']; ?></b></span>
+		<div class="d-flex align-items-center main-profile-link">
+			<a href="profile.php">
+				<i class="fa fa-user" aria-hidden="true"></i>&nbsp;
+			</a>
 		</div>
 	</header>
 	<div class="body">
 		<nav class="side-bar">
 			<div class="user-p">
-				<a href="index.php"><img src="../img/avatar_Past.jpg"></a>
+				<a href="profile.php"><img src="../img/Avatar/<?= $_SESSION['image']?>"></a>
+				<h4><b><?php echo $_SESSION['username']; ?></b></h4>
 			</div>
 			<ul id="navList"> <!-- Bắt đầu danh sách điều hướng trong sidebar -->
 				<li >

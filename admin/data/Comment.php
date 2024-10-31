@@ -27,7 +27,7 @@ function getCommentById($conn, $id){
 }
 
 //Comment count
-function CountByPostId($conn, $id){
+function countByPostId($conn, $id){
     $sql = "SELECT * FROM comment WHERE post_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->execute([$id]);
@@ -36,6 +36,22 @@ function CountByPostId($conn, $id){
 //Like count
 function likeCountByPostId($conn, $id){
     $sql = "SELECT * FROM post_like WHERE post_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$id]);
+    return $stmt->rowCount();
+}
+
+//Dislike count
+function dislikeCountByPostId($conn, $id){
+    $sql = "SELECT * FROM post_dislike WHERE post_id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$id]);
+    return $stmt->rowCount();
+}
+
+//Share count
+function shareCountByPostId($conn, $id){
+    $sql = "SELECT * FROM post_share WHERE post_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->execute([$id]);
     return $stmt->rowCount();

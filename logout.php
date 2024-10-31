@@ -6,3 +6,5 @@ session_destroy();
 
 header("Location: login.php");
 exit;
+
+// thêm xác nhận logout "Yes No" vào

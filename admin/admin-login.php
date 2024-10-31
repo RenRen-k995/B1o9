@@ -33,6 +33,7 @@ if (isset($_POST['uname']) && isset($_POST['pass'])) {
             $password = $user['password'];
             $email = $user['email'];
             $id = $user['admin_id'];
+            $img = $user['image'];
 
             // Xác thực tên người dùng và mật khẩu
             if ($username === $uname) {
@@ -41,6 +42,7 @@ if (isset($_POST['uname']) && isset($_POST['pass'])) {
                     $_SESSION['admin_id'] = $id;
                     $_SESSION['email'] = $email;
                     $_SESSION['username'] = $username;
+                    $_SESSION['image'] = $img;
 
                     header("Location: users.php"); // Chuyển hướng đến trang bảng điều khiển
                     exit;
